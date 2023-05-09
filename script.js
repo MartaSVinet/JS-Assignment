@@ -7,18 +7,22 @@ function firstSteps() {
     else if (playerSelection === null) {
         return askPlayer        
     } else {
-        return computerPlay        
+        return computerPlay()        
     }
 } 
+firstSteps();
 
-let askPlayer = confirm("You have pressed the cancel button. Do you want to leave or get back to the game?")
+function whatIf() {
+    let askPlayer = confirm("You have pressed the cancel button. Do you want to leave or get back to the game?")
+    if(confirm) {
+        alert("See you soon")    
+    }
+    else {
+        return playerSelection;    
+    }
+}
 
-if(confirm) {
-    alert("See you soon")    
-}
-else {
-    return playerSelection;    
-}
+
 
 
 function computerPlay() {    
@@ -26,7 +30,7 @@ function computerPlay() {
     return plays[Math.floor(Math.random() * plays.length)];
   }
   
-  function playRound(playerSelection, computerSelection) {    .
+  function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
       return "It's a tie!";
     } else if (
